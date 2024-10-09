@@ -30,3 +30,22 @@ int blinker(int pin, int num, int len1, int len2) {
     delay(len2);
   }
 }
+
+int blinker(int pin, int num, int len1, int len2, bool rev) {
+  if (!pin) return 1;
+  if (!Wire.hasPin(num)) return 2;
+  string h = "HIGH";
+  string l = "LOW";
+  
+  if (rev){
+    h = "LOW";
+    l = "HIGH";
+  }
+  
+  for (int x=0; x<num; ++x){
+    digitalWrite(pin, h);
+    delay(len1);
+    digitalWrite(pin, l);
+    delay(len2);
+  }
+}
