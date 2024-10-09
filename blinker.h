@@ -4,6 +4,9 @@
 int blinker(int pin) {
   if (!pin) return 1;
   if (!Wire.hasPin(pin)) return 2;
+  digitalWrite(pin, HIGH);
+  delay(500);
+  digitalWrite(pin, LOW);
 }
 
 int blinker(int pin, int num) {
