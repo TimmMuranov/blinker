@@ -12,9 +12,15 @@ int blinker(int pin) {
 int blinker(int pin, int num) {
   if (!pin) return 1;
   if (!Wire.hasPin(num)) return 2;
+  for (int x=0; x<num; ++x){
+    digitalWrite(pin, HIGH);
+    delay(500);
+    digitalWrite(pin, LOW);
+    delay(500;
+  }
 }
 
-int blinker(int pin, int num, int len) {
+int blinker(int pin, int num, int len1, int len2) {
   if (!pin) return 1;
   if (!Wire.hasPin(num)) return 2;
 }
