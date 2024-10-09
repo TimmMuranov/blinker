@@ -23,4 +23,10 @@ int blinker(int pin, int num) {
 int blinker(int pin, int num, int len1, int len2) {
   if (!pin) return 1;
   if (!Wire.hasPin(num)) return 2;
+  for (int x=0; x<num; ++x){
+    digitalWrite(pin, HIGH);
+    delay(len1);
+    digitalWrite(pin, LOW);
+    delay(len2);
+  }
 }
